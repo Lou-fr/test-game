@@ -7,17 +7,39 @@ void showChoice(char choice);
 void chooseWinner(char player, char computer);
 
 int main(){
-    char player;
-    char computer;
+    bool i = true;
+    int userinput;
+    do{
+        char player;
+        char computer;
 
-    player = UserChoice();
-    std::cout << "Vous avez choisis : ";
-    showChoice(player);
+        player = UserChoice();
+        std::cout << "Vous avez choisis : ";
+        showChoice(player);
 
-    computer = ComputerChoice();
-    std::cout << "L'ordinateur a choisis : ";
-    showChoice(computer);
-    chooseWinner(player, computer);
+        computer = ComputerChoice();
+        std::cout << "L'ordinateur a choisis : ";
+        showChoice(computer);
+        chooseWinner(player, computer);
+        std::cout << "Voulez vous rejouer ? \n";
+        std::cout << "1 pour Oui \n";
+        std::cout << "2 pour Non \n";
+        std::cin >> userinput;
+        switch (userinput)
+        {
+        case 1:
+            i = true;
+            break;
+        
+        case 2:
+            i = false;
+            break;
+        default:
+            std::cout << "Merci d'entrer une valeur valable";
+            break;
+        }
+    }while (i == true);
+    
 }
 char UserChoice(){
     char player;
