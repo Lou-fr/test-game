@@ -21,6 +21,7 @@ int main(){
         std::cout << "L'ordinateur a choisis : ";
         showChoice(computer);
         chooseWinner(player, computer);
+        std::cout << "**************************************************\n";
         std::cout << "Voulez vous rejouer ? \n";
         std::cout << "1 pour Oui \n";
         std::cout << "2 pour Non \n";
@@ -28,11 +29,13 @@ int main(){
         switch (userinput)
         {
         case 1:
+            std::cout << "**************************************************\n";
             i = true;
             break;
         
         case 2:
             i = false;
+            std::cout << "**************************************************\n";
             break;
         default:
             std::cout << "Merci d'entrer une valeur valable";
