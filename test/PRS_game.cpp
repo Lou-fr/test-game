@@ -8,8 +8,10 @@ void chooseWinner(char player, char computer);
 
 int main(){
     bool i = true;
+    bool f = false;
     int userinput;
     do{
+        f = false;
         char player;
         char computer;
 
@@ -25,22 +27,25 @@ int main(){
         std::cout << "Voulez vous rejouer ? \n";
         std::cout << "1 pour Oui \n";
         std::cout << "2 pour Non \n";
-        std::cin >> userinput;
-        switch (userinput)
-        {
-        case 1:
-            std::cout << "**************************************************\n";
-            i = true;
-            break;
-        
-        case 2:
-            i = false;
-            std::cout << "**************************************************\n";
-            break;
-        default:
-            std::cout << "Merci d'entrer une valeur valable";
-            break;
-        }
+        do{
+            std::cin >> userinput;
+            switch (userinput)
+            {
+            case 1:
+                std::cout << "**************************************************\n";
+                f = true;
+                i = true;
+                break;
+            
+            case 2:
+                i = false;
+                f = true;
+                std::cout << "**************************************************\n";
+                break;
+            default:
+                std::cout << "Merci d'entrer une valeur valable\n";
+                break;
+        }}while (f == false);
     }while (i == true);
     
 }
