@@ -2,6 +2,7 @@
 
 int userquit();
 float cannonique();
+float equation_second();
 
 int main(){
     char user_choice;
@@ -44,6 +45,28 @@ float cannonique(){
     return 0;
 
 }
+float equation_second(){
+    float val_a;
+    float val_b;
+    float val_c;
+    float delta;
+    float result_a;
+    float result_b;
+    std::cout << "Merci d'entre la valeur A";
+    std::cin >> val_a;
+    std::cout << "Merci d'entre la valeur B";
+    std::cin >> val_b;
+    std::cout << "Merci d'entre la valeur C";
+    std::cin >> val_c;
+    delta = ((val_b*val_b)-(4*val_a*val_b));
+    if (delta == 0)
+    {
+        result_a = ((-val_b)/(2*val_a));
+        std::cout << "Le résultat pour x = 0 est" << result_a;
+    }
+    
+}
+
 int userquit(){
     int userchoice = 0;
     std::cout << "\nQuand vous voulez quitter appuier sur 1\n";
