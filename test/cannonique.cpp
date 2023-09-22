@@ -9,6 +9,7 @@ int main(){
     std::cout << "\nBienvenue sur le le résolualateur 2000\n";
     std::cout << "Merci d'entrer cotre choix parmis cette liste : \n";
     std::cout << "'C' ou 'c' pour forme canonique \n";
+    std::cout << "'S' ou 's' pour les equation du seconde degres \n";
     std::cin >> user_choice;
     switch (user_choice)
     {
@@ -19,7 +20,15 @@ int main(){
     case 'C':
         cannonique();
         userquit();
-        break;    
+        break;
+    case 'S':
+        equation_second();
+        userquit();
+        break;
+    case 's':
+        equation_second();
+        userquit();
+        break;   
     default:
         break;
     }
@@ -52,18 +61,30 @@ float equation_second(){
     float delta;
     float result_a;
     float result_b;
-    std::cout << "Merci d'entre la valeur A";
+    std::cout << "Merci d'entre la valeur A\n";
     std::cin >> val_a;
-    std::cout << "Merci d'entre la valeur B";
+    std::cout << "Merci d'entre la valeur B\n";
     std::cin >> val_b;
-    std::cout << "Merci d'entre la valeur C";
+    std::cout << "Merci d'entre la valeur C\n";
     std::cin >> val_c;
     delta = ((val_b*val_b)-(4*val_a*val_b));
     if (delta == 0)
     {
         result_a = ((-val_b)/(2*val_a));
-        std::cout << "Le résultat pour x = 0 est" << result_a;
+        std::cout << "Le résultat pour x = 0 est" << result_a << "\n";
+        return 0;
     }
+    else if(delta > 0){
+        result_a = (-(delta/delta)/(2*val_a));
+        result_b = (((delta/delta)/(2*val_a)));
+        std::cout << "Le résultat pour x1 : " <<result_a << "et pour x2 : "<<result_b<<"\n";
+        return 0;
+    }else
+    {
+        std::cout << "Pas de résultat disponible\n";
+        return 0;
+    }
+    
     
 }
 
