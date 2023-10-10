@@ -38,8 +38,14 @@ int main(){
 
 }
 void showBalance(double balance){
-    std::cout << "Your balance is €"<< std::setprecision(2) << std::fixed << balance << '\n';
-}
+    if (balance == 0){
+        std::cout << "Desoler tu es pauvre tu as 0 euros sale connard\n";
+    }
+    else{
+        std::cout << "Tu as "<< std::setprecision(2) << std::fixed << balance << "d'euros connard\n";
+    }
+    }
+    
 double deposit(){
     double amount = 0;
     std::cout << "Entrez le montant que vous voulez deposer \n";
