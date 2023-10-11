@@ -1,4 +1,5 @@
 #include <iostream>
+#include <math.h>
 
 int userquit();
 float cannonique();
@@ -67,7 +68,8 @@ float equation_second(){
     std::cin >> val_b;
     std::cout << "Merci d'entre la valeur C\n";
     std::cin >> val_c;
-    delta = ((val_b*val_b)-(4*val_a*val_b));
+    delta = ((pow(val_b, 2.0))-(4*val_a*val_b));
+    std::cout << "Delta = "<< delta << "\n";
     if (delta == 0)
     {
         result_a = ((-val_b)/(2*val_a));
@@ -75,8 +77,8 @@ float equation_second(){
         return 0;
     }
     else if(delta > 0){
-        result_a = (-(delta/delta)/(2*val_a));
-        result_b = (((delta/delta)/(2*val_a)));
+        result_a = (-val_a-(sqrt(delta))/(2*val_a));
+        result_b = ((-val_a+(sqrt(delta))/(2*val_a)));
         std::cout << "Le résultat pour x1 : " <<result_a << "et pour x2 : "<<result_b<<"\n";
         return 0;
     }else
@@ -90,7 +92,7 @@ float equation_second(){
 
 int userquit(){
     int userchoice = 0;
-    std::cout << "\nQuand vous voulez quitter appuier sur 1\n";
+    std::cout << "\nQuand vous voulez quitter entrer un chiffre\n";
     while (userchoice == 0)
     {
         std::cin >> userchoice;
