@@ -6,7 +6,7 @@ int main(){
     int age;
 
     std::cout<< "Quel est vortre nom ? : ";
-    std::getline(std::cin, name);
+    std::cin >> name ;
 
     std::cout << "Quel est votre age ? : ";
     std::cin >> age;
